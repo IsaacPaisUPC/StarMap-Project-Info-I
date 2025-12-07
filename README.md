@@ -5,3 +5,4 @@ Els arxius funcionsXX.py son archius que compleixen amb cadascuna de les tasques
 Aquests arxius es fusionaran en un arxiu funcions.oy
 Els arxius starmapXX.py que fan referència a les tasques opcionals
 El arxiu starmap.py sera la fusió de les tasques opcionals i el arxiu principal.
+Link que nos puede servir para leer exactamente lo que queremos de los archivos: https://www.w3schools.com/python/python_file_open.asp
