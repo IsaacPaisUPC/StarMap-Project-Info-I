@@ -1,6 +1,6 @@
 """
 Tasca1
-Dissenyeu unaf unció de nom addConstellation(starmap,constellation)que,donat un mapa
+Dissenyeu una funció de nom addConstellation(starmap,constellation) que ,donat un mapa
 estel·lar i un nom de constel·lació, afegeixi una nova constel·lació buida al mapa.
 >>>starmap={}
 >>>addConstellation(starmap,"GreatBear")
