@@ -14,9 +14,6 @@ Exemple:
 """
 def addAdjacencies(starmap, constellation, baseStar, neighbors):
     """
-    Donat un mapa estel·lar, una constel·lació, una estrella base i una llista
-    d’estrelles adjacents, estableix les connexions bidireccionals.
-
     >>> starmap = {'Great Bear': {'stars': {'Alkaid': [], 'Dubhe': []}, 'adjacencies': {'Alkaid': [], 'Dubhe': []}}}
     >>> addAdjacencies(starmap, "Great Bear", "Alkaid", ["Dubhe"])
     >>> starmap["Great Bear"]["adjacencies"]["Alkaid"]
