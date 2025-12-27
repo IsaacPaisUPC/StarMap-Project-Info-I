@@ -10,14 +10,17 @@ Exemple:
 >>> starmap
 {'GreatBear': {'stars': {'Alkaid': [], 'Dubhe': []}, 'adjacencies': {'Alkaid': [], 'Dubhe': []}}}
 """
-
 def addStars(starmap, constellation, starNames):
-    if constellation not in starmap:
-        print("La constelacio no existeix")
-    else:
+    """
+    >>> starmap = {'Great Bear': {'stars': {}, 'adjacencies': {}}}
+    >>> addStars(starmap, "Great Bear", ["Alkaid", "Dubhe"])
+    >>> starmap['Great Bear']['stars']
+    {'Alkaid': [], 'Dubhe': []}
+    >>> starmap['Great Bear']['adjacencies']
+    {'Alkaid': [], 'Dubhe': []}
+    """
+    if constellation in starmap:
         for star in starNames:
-            if star in starmap[constellation]['stars']:
-                print("L'estrella " + star + " ja existeix a " + constellation)
-            else:
+            if star not in starmap[constellation]['stars']:
                 starmap[constellation]['stars'][star] = []
                 starmap[constellation]['adjacencies'][star] = []
