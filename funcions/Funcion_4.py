@@ -12,6 +12,12 @@ Exemple:
 """
 
   def deleteAdjacency(starmap, constellation, star1, star2):
+    """
+    >>> starmap = {'Great Bear': {'stars': {'Alkaid': [], 'Dubhe': []}, 'adjacencies': {'Alkaid': ['Dubhe'], 'Dubhe': ['Alkaid']}}}
+    >>> deleteAdjacency(starmap, "Great Bear", "Alkaid", "Dubhe")
+    >>> starmap["Great Bear"]["adjacencies"]["Alkaid"]
+    []
+    """
     if constellation in starmap:
         if star1 in starmap[constellation]['adjacencies'][star2] and star2 in starmap[constellation]['adjacencies'][star1]:
             starmap[constellation]['adjacencies'][star1].remove(star2)
