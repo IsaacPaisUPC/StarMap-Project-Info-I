@@ -13,9 +13,15 @@ Dubhe adjacent a: Alkaid
 
 def listAllStars(starmap, constellation):
     """
-    >>> listAllStars({'Great Bear': {'stars': {'Alkaid': [], 'Dubhe': []}, 'adjacencies': {'Alkaid': ['Dubhe'], 'Dubhe': ['Alkaid']}}}, 'Great Bear')
+    >>> starmap = {'Great Bear': {'stars': {'Alkaid': [], 'Dubhe': []}, 'adjacencies': {'Alkaid': ['Dubhe'], 'Dubhe': ['Alkaid']}}}
+    >>> listAllStars(starmap, "Great Bear")
+    Great Bear:
     Alkaid adjacent a: Dubhe
     Dubhe adjacent a: Alkaid
     """
-    for estrella in starmap[constellation]['adjacencies']:
-        print( estrella + " adjacent a: "+ ",".join(starmap[constellation]['adjacencies'][estrella]))
+    if constellation in starmap:
+        print(constellation + ":")
+        patata = starmap[constellation]['adjacencies']
+        for estrella in patata:
+            estrellasadyascentes = ", ".join(patata[estrella]) 
+            print(estrella + " adjacent a: " + estrellasadyascentes)
