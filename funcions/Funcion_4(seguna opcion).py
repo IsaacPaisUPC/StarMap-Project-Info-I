@@ -20,8 +20,8 @@ def deleteAdjacency(starmap, constellation, star1, star2):
         stars = starmap[constellation]['stars']
   
         if star1 in stars and star2 in stars:  
-            adjs = starmap[constellation]['adjacencies']
-            if star2 in adjs[star1]:
-                adjs[star1].remove(star2)
-            if star1 in adjs[star2]:
-                adjs[star2].remove(star1)
+            patata = starmap[constellation]['adjacencies']
+            if star2 in patata[star1]:
+                patata[star1].remove(star2)
+            if star1 in patata[star2]:
+                patata[star2].remove(star1)
