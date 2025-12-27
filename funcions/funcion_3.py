@@ -1,3 +1,19 @@
+"""
+Tasca 3
+Dissenyeu una funció de nom addAdjacencies(starmap, constellation, baseStar, neighbors)
+que, donat un mapa estel·lar, una constel·lació, una estrella base i una llista d’estrelles adjacents,
+estableixi les connexions bidireccionals. No s’han de permetre duplicats ni auto-adjacències. No es
+crearà l’adjacència si alguna de les dues estrelles no existeix encara a la constel·lació.
+
+Exemple:
+>>> starmap = {'Great Bear': {'stars': {'Alkaid': [], 'Dubhe': []},
+... 'adjacencies': {'Alkaid': [], 'Dubhe': []}}}
+>>> addAdjacencies(starmap, "Great Bear", "Alkaid", ["Dubhe"])
+>>> starmap["Great Bear"]["adjacencies"]["Alkaid"]
+['Dubhe']
+
+"""
+
 def addAdjacencies(starmap,constellation,baseStar,neighbors):
     """
     >>> addAdjacencies(starmap,"Great Bear", "Alkaid", ["Dubhe"])
