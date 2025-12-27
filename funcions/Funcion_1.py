@@ -8,18 +8,13 @@ estel·lar i un nom de constel·lació, afegeixi una nova constel·lació buida 
 {'GreatBear':{'stars':{},'adjacencies':{}}}
 
 """
-starmap = {}
-constellation = input("Diguem una constel·lació: ")
-
 def addConstellation(starmap, constellation):
     """
-    >>> addConstellation(starmap, "GreatBear")
-    {'GreatBear': {'stars': {}, 'adjacencies': {}}}
+    >>> starmap = {}
+    >>> addConstellation(starmap, "Great Bear")
+    >>> starmap
+    {'Great Bear': {'stars': {}, 'adjacencies': {}}}
     """
-    if starmap.get(constellation):
-        print("La constelacio ja existeix")
-    else:
-        starmap[constellation] = {'stars': {}, 'adjacencies': {}}
-        return starmap
-
-print(starmap)
+  
+    if constellation not in starmap:
+        starmap[constellation] = {'stars': {},'adjacencies': {}}
