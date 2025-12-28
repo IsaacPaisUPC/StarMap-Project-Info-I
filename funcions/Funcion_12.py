@@ -9,4 +9,4 @@ def setupWindow(constellation, width=800, height=600):
         screen = turtle.Screen()
         screen.setup(width=800, height=600)
         screen.title(constellation)
-        turtle.done()
+        return screen
