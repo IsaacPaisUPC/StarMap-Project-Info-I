@@ -16,6 +16,6 @@ def drawAllSegments(pen, stars, adjacencies):
             if estrella_2 not in stars or not isValidCoord(stars[estrella_2]):
                 continue
 
-            if should_draw_once(estrella_1, estrella_2):
+            if shouldDrawOnce(estrella_1, estrella_2):
                 drawSegment( pen,stars[estrella_1],stars[estrella_2])
 
