@@ -6,7 +6,7 @@ un punt a coord i escrigui name desplaçat lleugerament per no tapar el punt.
 """
 
 def drawStar(pen, name, coord, pointSize=8, offset=8):
-    coord= x,y
+    x,y = coord
     pen.goto(x,y)
     pen.dot(pointSize)
     pen.goto(x+offset, y+offset)
