@@ -13,8 +13,11 @@ def countStars(starmap, constellation):
     >>> countStars(starmap, "Great Bear")
     3
     """
-    contador = 0
-    for estrella in starmap[constellation]['stars']:
-        contador = contador + 1
-
-    return contador
+    if constellation in starmap:
+        contador = 0
+        for estrella in starmap[constellation]['stars']:
+            contador = contador + 1
+        return contador
+             
+    else:
+        print(" La contel·lació no existeix")
