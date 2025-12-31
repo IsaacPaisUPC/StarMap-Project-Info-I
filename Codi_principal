@@ -1,0 +1,38 @@
+"""
+Falta acabar-lo
+"""
+import funcions
+
+def menú():
+    opcio = 0
+    starmap={}
+
+    while opcio != 13:
+        print("\n Menú")
+        print()
+        print("1. Afegir constel·lació")
+        print("2. Afegir estrelles a constel·lació")
+        print("3. Afegir adjacència entre estrelles de constel·lació")
+        print("4. Eliminar adjacència entre estrelles de constel·lació")
+        print("5. Eliminar estrella de constel·lació")
+        print("6. Llistar constel·lació")
+        print("7. Llistar constel·lacions")
+        print("8. Dibuixar constel·lació (Turtle)")
+        print("9. Guardar constel·lació en JSON")
+        print("10. Carregar constel·lació des de JSON")
+        print("11. Modificar posició d’una estrella")
+        print("12. Eliminar constel·lació")
+        print("13. Sortir de l’aplicació")
+        print()
+        opcio= int(input("Escull una opció del menú: "))
+        if opcio == 1:
+            constellation= input("Dona elnom de la nova constel·lació: ")
+            funcions.addConstellation(starmap,constellation)
+            print("\n La constel·lació s'ha afegit correctament")
+
+        if opcio == 2:
+            constellation = input("Dona el nom de la constel·lació a modificar: ")
+            starNames = ""
+            while starNames != "final":
+                starNames= input("Dona el nom d'una estrella: ")
+                funcions.addStars(starmap, constellation, starNames)
