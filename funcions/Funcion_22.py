@@ -9,6 +9,7 @@ Exemple:
 >>> isinstance(newmap, dict) and "Great Bear" in newmap
 True
 """
+import json
 def saveStarmapJSON(starmap, filepath):
     """
     >>> saveStarmapJSON(starmap, "full_map.json")
