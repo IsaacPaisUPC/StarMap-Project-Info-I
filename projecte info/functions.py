@@ -400,16 +400,10 @@ def backupStarmap(starmap, filepath):
     saveStarmapJSON(starmap, filepath + ".bak.json")
 
 def deleteStarWithBackup(starmap, constellation, star, filepath):
-    """
-    Copia seguretat abans d'eliminar estrella.
-    """
     backupStarmap(starmap, filepath)
     deleteStar(starmap, constellation, star)
 
-def deleteConstellationWithBackup(starmap, constellation, filepath):
-    """
-    Copia seguretat abans de borrar constel·lació.
-    """
+def deleteConstellationWithBackup(starmap, constellation, filepath):  
     backupStarmap(starmap, filepath)
 
     if constellation in starmap:
