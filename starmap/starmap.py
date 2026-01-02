@@ -124,8 +124,8 @@ def main():
             fitxer = input("Introdueix nom del fitxer a carregar: ")
             nou_mapa = functions.loadStarmapJSON(fitxer)
             if nou_mapa:
-                starmap = nou_mapa
-                print("Mapa carregat.")
+                starmap.update(nou_mapa)
+                print("Mapa carregat i afegit a la memòria.")
             else:
                 print("Error carregant el mapa o fitxer buit.")
             
