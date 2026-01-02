@@ -36,14 +36,17 @@ def main():
         elif opcio == '2':
             const = input("Dona nom de la constel·lació: ")
             if const in starmap:
-                nomsestrelles = input("Dona noms de les estrelles separats per comes: ")
-                divisiones = nomsestrelles.split(',')
+                print("Escriu 'final' per acabar d'afegir estrelles.")
                 llista_estrelles = []
-                for nomsestrelles in divisiones:
-                    llista_estrelles.append(nomsestrelles)
+                while True:
+                    nom = input("Dona nom de l'estrella: ")
+                    if nom == 'final':
+                        break
+                    llista_estrelles.append(nom)
                 
-                functions.addStars(starmap, const, llista_estrelles)
-                print("Estrelles afegides correctament.")
+                if len(llista_estrelles) > 0:
+                    functions.addStars(starmap, const, llista_estrelles)
+                    print("Estrelles afegides correctament.")
             else:
                 print("La constel·lació no existeix.")
 
@@ -51,9 +54,21 @@ def main():
             const = input("Dona nom de la constel·lació: ")
             if const in starmap:
                 starA = input("Dona nom de l'estrella origen: ")
-                starB = input("Dona nom de l'estrella destí: ")
-                functions.addAdjacencies(starmap, const, starA, [starB])
-                print("Adjacència creada entre", starA, "i", starB)
+                
+                if starA in starmap[const]['stars']:
+                    print("Escriu 'final' per acabar d'afegir veïns.")
+                    llista_adj = []
+                    while True:
+                        starB = input("Dona nom de l'estrella adjascent a " + starA + " (o 'final'): ")
+                        if starB == 'final':
+                            break
+                        llista_adj.append(starB)
+                    
+                    if len(llista_adj) > 0:
+                        functions.addAdjacencies(starmap, const, starA, llista_adj)
+                        print("Adjacències creades correctament.")
+                else:
+                    print("L'estrella origen no existeix.")
             else:
                 print("La constel·lació no existeix.")
 
@@ -88,14 +103,8 @@ def main():
         elif opcio == '6':
             const = input("Dona nom de la constel·lació: ")
             if const in starmap:
-                print("Dades:")
+                print("Estrelles i adjacencies:")
                 functions.listAllStars(starmap, const)
-                
-                total = functions.countStars(starmap, const)
-                print("Total d'estrelles:", total)
-                
-                aillades = functions.listIsolatedStars(starmap, const)
-                print("Estrelles aïllades:", aillades)
             else:
                 print("La constel·lació no existeix.")
             
@@ -130,10 +139,9 @@ def main():
             const = input("Dona nom de la constel·lació: ")
             if const in starmap:
                 star = input("Dona nom de l'estrella a moure: ")
-                coords = input("Noves coordenades x,y: ")
-                llista_xy = coords.split(',')
-                x = float(llista_xy[0])
-                y = float(llista_xy[1])
+                
+                x = float(input("Nova coordenada X: "))
+                y = float(input("Nova coordenada Y: "))
                 
                 functions.assignCoordinates(starmap, const, star, x, y)
                 print("Posició de la estrella ", star, "actualitzada.")
@@ -143,8 +151,12 @@ def main():
         elif opcio == '12':
             const = input("Dona nom de la constel·lació a eliminar: ")
             if const in starmap:
-                functions.deleteConstellationWithBackup(starmap, const, "backup.json")
-                print("Constel·lació", const, "eliminada.")
+                confirmacio = input("Segur que la vols eliminar?(S/n): ")
+                if confirmacio == 'S':
+                    functions.deleteConstellationWithBackup(starmap, const, "backup.json")
+                    print("Constel·lació", const, "eliminada.")
+                else:
+                    print("Operació cancel·lada.")
             else:
                 print("La constel·lació no existeix.")
 
@@ -173,4 +185,5 @@ def main():
 
         else:
             print("Opció no vàlida.")
+
 main()
