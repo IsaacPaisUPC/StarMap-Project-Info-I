@@ -1,0 +1,24 @@
+{
+  "Orion": {
+    "stars": {
+      "Betelgeuse": [-60, 80],
+      "Bellatrix": [60, 70],
+      "Meissa": [0, 120],
+      "Alnitak": [-20, 0],
+      "Alnilam": [0, 5],
+      "Mintaka": [20, 0],
+      "Saiph": [-40, -80],
+      "Rigel": [50, -90]
+    },
+    "adjacencies": {
+      "Betelgeuse": ["Alnilam", "Bellatrix", "Meissa"],
+      "Bellatrix": ["Betelgeuse", "Mintaka", "Meissa"],
+      "Meissa": ["Betelgeuse", "Bellatrix"],
+      "Alnitak": ["Alnilam", "Saiph"],
+      "Alnilam": ["Alnitak", "Mintaka", "Betelgeuse"],
+      "Mintaka": ["Alnilam", "Bellatrix", "Rigel"],
+      "Saiph": ["Alnitak", "Rigel"],
+      "Rigel": ["Saiph", "Mintaka"]
+    }
+  }
+}

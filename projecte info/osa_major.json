@@ -1,0 +1,22 @@
+{
+  "Great Bear": {
+    "stars": {
+      "Alkaid": [200, -20],
+      "Mizar and Alcor": [150, 10],
+      "Alioth": [100, 40],
+      "Megrez": [40, 60],
+      "Dubhe": [-80, 120],
+      "Merak": [-100, 40],
+      "Phad": [-20, 20]
+    },
+    "adjacencies": {
+      "Alkaid": ["Mizar and Alcor"],
+      "Mizar and Alcor": ["Alkaid", "Alioth"],
+      "Alioth": ["Mizar and Alcor", "Megrez"],
+      "Megrez": ["Alioth", "Dubhe", "Phad"],
+      "Dubhe": ["Megrez", "Merak"],
+      "Merak": ["Dubhe", "Phad"],
+      "Phad": ["Megrez", "Merak"]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+"Cassiopeia": {
+    "stars": {
+      "Caph": [-120, 40],
+      "Schedar": [-60, 90],
+      "Gamma Cassiopeiae": [0, 20],
+      "Ruchbah": [60, 80],
+      "Segin": [120, 30]
+    },
+    "adjacencies": {
+      "Caph": ["Schedar"],
+      "Schedar": ["Caph", "Gamma Cassiopeiae"],
+      "Gamma Cassiopeiae": ["Schedar", "Ruchbah"],
+      "Ruchbah": ["Gamma Cassiopeiae", "Segin"],
+      "Segin": ["Ruchbah"]
+    }
+  }
+}
