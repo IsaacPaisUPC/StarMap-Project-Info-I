@@ -1,6 +1,5 @@
 """
 functions.py
-Conjunt de funcions per gestionar el mapa estel·lar.
 """
 import turtle
 import json
