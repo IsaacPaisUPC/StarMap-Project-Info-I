@@ -9,7 +9,6 @@ def main():
     starmap = {} 
     
     while True:
-        # Mostrem el menú directament dins del bucle
         print("\nMenú")
         print("")
         print("1. Afegir constel·lació")
@@ -67,7 +66,6 @@ def main():
                 
                 estrelles = starmap[const]['stars']
                 if starA in estrelles and starB in estrelles:
-                    # Recorda que aquesta funció l'hem afegit nosaltres al final de functions.py
                     functions.deleteAdjacencyWithBackup(starmap, const, starA, starB, "backup.json")
                     print("Adjacència entre", starA, "i", starB, "eliminada.")
                 else:
