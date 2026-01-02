@@ -5,30 +5,29 @@ Programa principal del gestor de mapes estel·lars.
 import functions
 import json
 
-def show_menu():
-    print("\nMenú")
-    print("")
-    print("1. Afegir constel·lació")
-    print("2. Afegir estrelles a constel·lació")
-    print("3. Afegir adjacència entre estrelles de constel·lació")
-    print("4. Eliminar adjacència entre estrelles de constel·lació")
-    print("5. Eliminar estrella de constel·lació")
-    print("6. Llistar constel·lació (i estadístiques)")
-    print("7. Llistar constel·lacions")
-    print("8. Dibuixar constel·lació (Turtle)")
-    print("9. Guardar constel·lació en JSON")
-    print("10. Carregar constel·lació des de JSON")
-    print("11. Modificar posició d'una estrella")
-    print("12. Eliminar constel·lació")
-    print("13. Sortir de l'aplicació")
-    print("14. Calcular distància entre dues estrelles")
-    print("15. Trobar l'estrella més propera")
-
 def main():
     starmap = {} 
     
     while True:
-        show_menu()
+        # Mostrem el menú directament dins del bucle
+        print("\nMenú")
+        print("")
+        print("1. Afegir constel·lació")
+        print("2. Afegir estrelles a constel·lació")
+        print("3. Afegir adjacència entre estrelles de constel·lació")
+        print("4. Eliminar adjacència entre estrelles de constel·lació")
+        print("5. Eliminar estrella de constel·lació")
+        print("6. Llistar constel·lació (i estadístiques)")
+        print("7. Llistar constel·lacions")
+        print("8. Dibuixar constel·lació (Turtle)")
+        print("9. Guardar constel·lació en JSON")
+        print("10. Carregar constel·lació des de JSON")
+        print("11. Modificar posició d'una estrella")
+        print("12. Eliminar constel·lació")
+        print("13. Sortir de l'aplicació")
+        print("14. Calcular distància entre dues estrelles")
+        print("15. Trobar l'estrella més propera")
+
         opcio = input("\nTria la teva opció: ")
 
         if opcio == '1':
@@ -68,6 +67,7 @@ def main():
                 
                 estrelles = starmap[const]['stars']
                 if starA in estrelles and starB in estrelles:
+                    # Recorda que aquesta funció l'hem afegit nosaltres al final de functions.py
                     functions.deleteAdjacencyWithBackup(starmap, const, starA, starB, "backup.json")
                     print("Adjacència entre", starA, "i", starB, "eliminada.")
                 else:
@@ -91,8 +91,8 @@ def main():
         elif opcio == '6':
             const = input("Dona nom de la constel·lació: ")
             if const in starmap:
-                datos = functions.getConstellation(starmap, const)
-                print("Dades:", datos)
+                print("Dades:")
+                functions.listAllStars(starmap, const)
                 
                 total = functions.countStars(starmap, const)
                 print("Total d'estrelles:", total)
@@ -103,8 +103,8 @@ def main():
                 print("La constel·lació no existeix.")
             
         elif opcio == '7':
-            llista = functions.getConstellationsList(starmap)
-            print("Constel·lacions disponibles:", llista)
+            print("Constel·lacions disponibles:")
+            functions.listAllConstellations(starmap)
 
         elif opcio == '8':
             const = input("Dona nom de la constel·lació: ")
@@ -137,8 +137,8 @@ def main():
                 llista_xy = coords.split(',')
                 x = float(llista_xy[0])
                 y = float(llista_xy[1])
-                nova_pos = [x, y]
-                functions.modifyStarPosition(starmap, const, star, nova_pos)
+                
+                functions.assignCoordinates(starmap, const, star, x, y)
                 print("Posició de la estrella ", star, "actualitzada.")
             else:
                 print("La constel·lació no existeix.")
@@ -176,5 +176,4 @@ def main():
 
         else:
             print("Opció no vàlida.")
-
 main()
