@@ -25,3 +25,4 @@ def loadStarmapJSON(filepath):
     fitxer = open(filepath, "r")
     variable = json.load(fitxer)
     fitxer.close()
+    return variable
