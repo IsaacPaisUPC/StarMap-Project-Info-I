@@ -1,6 +1,5 @@
 """
 starmap.py
-Programa principal del gestor de mapes estel·lars.
 """
 import functions
 import json
