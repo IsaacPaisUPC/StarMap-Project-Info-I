@@ -23,7 +23,8 @@ def addConstellation(starmap, constellation):
 """
 Tasca2
 Dissenyeu una funció de nom addStars(starmap,constellation,starNames) que, donat un
-mapa estel·lar, una constel·lació i una llista d’estrelles...
+mapa estel·lar, una constel·lació i una llista d’estrelles, permeti afegir les estrelles donades a una
+constel·lació existent. Cada estrella ha de començar sense adjacències i amb coordenades buides.
 """
 def addStars(starmap, constellation, starNames):
     """
@@ -40,7 +41,10 @@ def addStars(starmap, constellation, starNames):
 
 """
 Tasca 3
-Dissenyeu una funció de nom addAdjacencies...
+Dissenyeu una funció de nom addAdjacencies(starmap, constellation, baseStar, neighbors)
+que, donat un mapa estel·lar, una constel·lació, una estrella base i una llista d’estrelles adjacents,
+estableixi les connexions bidireccionals. No s’han de permetre duplicats ni auto-adjacències. No es
+crearà l’adjacència si alguna de les dues estrelles no existeix encara a la constel·lació.
 """
 def addAdjacencies(starmap, constellation, baseStar, neighbors):
     """
@@ -64,7 +68,9 @@ def addAdjacencies(starmap, constellation, baseStar, neighbors):
 
 """
 Tasca4
-Dissenyeu una funció de nom deleteAdjacency...
+Dissenyeu una funció de nom deleteAdjacency(starmap, constellation, star1, star2), que
+donat un mapa estel·lar, un nom de constel·lació, i dos noms d’estrella, elimini la connexió entre
+les dues estrelles donades.
 """
 def deleteAdjacency(starmap, constellation, star1, star2):
     """
@@ -84,7 +90,10 @@ def deleteAdjacency(starmap, constellation, star1, star2):
 
 """
 Tasca 5
-Dissenyeu una funció de nom deleteStar...
+Dissenyeu una funció de nom deleteStar(starmap, constellation, star) que, donat un mapa
+estel·lar, una constel·lació i un nom d’estrella, elimini l’estrella de la constel·lació (així com totes
+les seves adjacències).
+
 """
 def deleteStar(starmap, constellation, star):
     """
@@ -106,7 +115,8 @@ def deleteStar(starmap, constellation, star):
 
 """
 Tasca 6
-Dissenyeu una funció de nom listAllStars...
+Dissenyeu una funció de nom listAllStars(starmap, constellation), que donat un mapa estel·lar
+i una constel·lació, mostri per pantalla totes les estrelles de la constel·lació i les seves adjacències.
 """
 def listAllStars(starmap, constellation):
     """
@@ -125,7 +135,8 @@ def listAllStars(starmap, constellation):
 
 """
 Tasca 7
-Dissenyeu una funció de nom listAllConstellations...
+Dissenyeu una funció de nom listAllConstellations(starmap) que, donat un mapa estel·lar,
+mostri per pantalla el nom de totes les constel·lacions guardades al mapa.
 """
 def listAllConstellations(starmap):
     """
@@ -140,7 +151,9 @@ def listAllConstellations(starmap):
 
 """
 Tasca 8
-Dissenyeu una funció de nom assignCoordinates...
+Dissenyeu una funció de nom assignCoordinates(starmap, constellation, star, x, y) que,
+donat un mapa estel·lar, una constel·lació, una estrella i les coordenades x i y, assigni les
+coordenades (x, y) a l’estrella de la constel·lació donada.
 """
 def assignCoordinates(starmap, constellation, star, x, y):
     """
@@ -156,7 +169,9 @@ def assignCoordinates(starmap, constellation, star, x, y):
 
 """
 Tasca 9
-Dissenyeu una funció de nom getCoordinates...
+Dissenyeu una funció de nom getCoordinates(starmap, constellation, star) que, donat un
+mapa estel·lar, una constel·lació i una estrella, retorni les coordenades de l’estrella donada.
+
 """
 def getCoordinates(starmap, constellation, star):
     """
@@ -171,7 +186,9 @@ def getCoordinates(starmap, constellation, star):
 
 """
 Tasca 10
-Dissenyeu una funció de nom isValidCoord...
+Dissenyeu una funció de nom isValidCoord(coord) que, donada una coordenada, retorni True si
+la coordenada donada és una llista de longitud 2 (p. ex. [x, y]), i False altrament.
+
 """
 def isValidCoord(coord):
     """
@@ -188,7 +205,10 @@ def isValidCoord(coord):
 
 """
 Tasca 11
-Dissenyeu una funció de nom shouldDrawOnce...
+Dissenyeu una funció de nom shouldDrawOnce(a, b) que, donats dos textos corresponents a
+noms d’estrelles, retorni True només si el nom a va abans que b (ordre alfabètic).
+NOTA: Aquesta funció s’utilitza per evitar dibuixar dues vegades el mateix segment (bidireccional).
+
 """
 def shouldDrawOnce(a,b):
     """
